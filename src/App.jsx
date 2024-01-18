@@ -16,7 +16,7 @@ function App() {
     return (
         <>
             <TodosContext.Provider value={{ todos, hideCompleted, dispatch }}>
-                <Container className="mt-[100px] mx-auto w-[95%] max-w-[600px] shadow rounded-2xl pt-4 px-4 bg-slate-900">
+                <Container className="my-4 md:my-[100px] mx-auto w-[95%] max-w-[600px] min-h-[300px] shadow rounded-2xl pt-4 px-4 bg-slate-900">
                     <h1 className="text-slate-300 text-2xl font-mono text-center mb-4">
                         My Todos
                     </h1>
