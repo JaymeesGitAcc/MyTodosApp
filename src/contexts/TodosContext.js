@@ -8,12 +8,12 @@ export function todosReducer(state, action) {
             return {
                 ...state,
                 todos: [
+                    ...state.todos,
                     {
                         id: crypto.randomUUID(),
                         task: action.payload.task,
                         completed: false,
                     },
-                    ...state.todos,
                 ],
             };
         }
@@ -63,10 +63,22 @@ export function todosReducer(state, action) {
                 todos: updatedTodos,
             };
         }
-        case "toggle-completed": {
+        case "cleared-all": {
             return {
                 ...state,
-                hideCompleted: !state.hideCompleted,
+                todos: [],
+            };
+        }
+        case "cleared-completed": {
+            return {
+                ...state,
+                todos: state.todos.filter((todo) => !todo.completed),
+            };
+        }
+        case "cleared-uncompleted": {
+            return {
+                ...state,
+                todos: state.todos.filter((todo) => todo.completed),
             };
         }
         default: {

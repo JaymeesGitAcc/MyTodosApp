@@ -1,5 +1,4 @@
 export const initialTasks = {
-    hideCompleted: false,
     todos: [
         {
             id: 0,

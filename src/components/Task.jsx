@@ -42,7 +42,7 @@ function Task({ todo }) {
                         text-slate-200 font-semibold text-sm md:text-base
                         ${
                             todo.completed
-                                ? "line-through italic text-green-500"
+                                ? "line-through italic text-indigo-500"
                                 : ""
                         }
                     `}

@@ -31,6 +31,7 @@ function AddTask() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 shouldFocus={true}
+                required
             />
             <button className="rounded-r-[30px] bg-indigo-500 text-white px-4 py-2">
                 Add
