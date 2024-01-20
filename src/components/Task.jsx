@@ -39,11 +39,11 @@ function Task({ todo }) {
                     <label
                         htmlFor={todo.id}
                         className={`
-                        text-slate-200 font-semibold text-sm md:text-base
+                         font-semibold text-sm md:text-base
                         ${
                             todo.completed
                                 ? "line-through italic text-indigo-500"
-                                : ""
+                                : "text-slate-200"
                         }
                     `}
                     >
@@ -56,7 +56,7 @@ function Task({ todo }) {
             <div className="ml-auto flex gap-2">
                 {!todo.completed && !isEditing && (
                     <button
-                        className={`p-2 bg-slate-500 text-white rounded-lg text-sm md:text-base`}
+                        className={`p-2 border-2 border-slate-500 text-white rounded-lg text-sm duration-150 hover:bg-slate-500 md:text-base`}
                         onClick={() => {
                             setIsEditing(true);
                         }}
@@ -66,7 +66,7 @@ function Task({ todo }) {
                 )}
 
                 <button
-                    className={`p-2 bg-red-600 text-white rounded-lg text-sm md:text-base`}
+                    className={`p-2 bg-red-500 text-white rounded-lg text-sm duration-150 hover:bg-red-600 md:text-base`}
                     onClick={() => handleDelete(todo.id)}
                 >
                     Delete

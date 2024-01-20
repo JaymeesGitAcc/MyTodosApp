@@ -37,7 +37,7 @@ export const EditTask = ({ todo, setIsEditing }) => {
                 ref={inputRef}
             />
             <button
-                className={`p-2 bg-green-500 text-white rounded-lg text-sm md:text-base ml-auto`}
+                className={`p-2 bg-green-500 text-white rounded-lg text-sm md:text-base ml-auto duration-150 hover:bg-green-600`}
             >
                 Save
             </button>
