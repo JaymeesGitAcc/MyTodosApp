@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
-import { TodosContext } from "../contexts/TodosContext";
+import React, { useState } from "react";
+import { useDispatch } from "../contexts/TodosContext";
 import Input from "./Input";
 
 function AddTask() {
     const [input, setInput] = useState("");
-    const { dispatch } = useContext(TodosContext);
+    const dispatch = useDispatch();
 
     const handleOnSubmit = (e) => {
         e.preventDefault();

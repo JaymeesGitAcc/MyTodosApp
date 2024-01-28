@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Task from "./Task";
-import { TodosContext } from "../contexts/TodosContext";
+import { useTodos } from "../contexts/TodosContext";
 import ClearButton from "./ClearButton";
 
 function ListTasks() {
-    const { todos } = useContext(TodosContext);
+    const todos = useTodos();
     const [currentCategory, setCurrentCategory] = useState("all");
 
     let visibleTodos = [...todos];

@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
-import { TodosContext } from "../contexts/TodosContext";
+import React, { useState } from "react";
+import { useDispatch } from "../contexts/TodosContext";
 import Input from "./Input";
 import { EditTask } from "./EditTask";
 
 function Task({ todo }) {
     const [isEditing, setIsEditing] = useState(false);
-    const { dispatch } = useContext(TodosContext);
+    const dispatch = useDispatch();
 
     const handleDelete = (id) => {
         dispatch({

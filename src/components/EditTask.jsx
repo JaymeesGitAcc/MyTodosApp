@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { TodosContext } from "../contexts/TodosContext";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch } from "../contexts/TodosContext";
 
 export const EditTask = ({ todo, setIsEditing }) => {
     const [input, setInput] = useState(todo.task);
-    const { dispatch } = useContext(TodosContext);
-
+    const dispatch = useDispatch();
     const inputRef = useRef(null);
 
     useEffect(() => {

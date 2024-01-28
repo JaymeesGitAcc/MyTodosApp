@@ -1,16 +1,26 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export const TodosContext = createContext(null);
+export const TodosDispatchContext = createContext(null);
+
+export function useTodos() {
+    return useContext(TodosContext);
+}
+
+export function useDispatch() {
+    return useContext(TodosDispatchContext);
+}
 
 export function todosReducer(state, action) {
     switch (action.type) {
         case "added": {
+            const uniqueID = crypto.randomUUID();
             return {
                 ...state,
                 todos: [
                     ...state.todos,
                     {
-                        id: crypto.randomUUID(),
+                        id: uniqueID,
                         task: action.payload.task,
                         completed: false,
                     },

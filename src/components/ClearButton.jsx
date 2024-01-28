@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { TodosContext } from "../contexts/TodosContext";
+import { useDispatch } from "../contexts/TodosContext";
 
 const ClearButton = ({ children, actiontype = "" }) => {
-    const { dispatch } = useContext(TodosContext);
+    const dispatch = useDispatch();
 
     const handleOnClick = () => {
         if (actiontype !== "") {
